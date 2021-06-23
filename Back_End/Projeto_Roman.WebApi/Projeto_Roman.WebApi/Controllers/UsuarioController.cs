@@ -52,39 +52,5 @@ namespace Projeto_Roman.WebApi.Controllers
                 return BadRequest(ex);
             }
         }
-
-        //[Authorize(Roles = "1")]
-        [HttpPost]
-        public IActionResult Post(Usuario novoUsuario)
-        {
-            try
-            {
-                _usuarioRepository.Cadastrar(novoUsuario);
-
-                return StatusCode(201);
-            }
-            catch (Exception codErro)
-            {
-                return BadRequest(codErro);
-
-            }
-
-        }
-
-        //[Authorize(Roles = "1")]
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
-        {
-            try
-            {
-                _usuarioRepository.Deletar(id);
-                return StatusCode(200);
-            }
-            catch (Exception codErro)
-            {
-                return BadRequest(codErro);
-
-            }
-        }
     }
 }

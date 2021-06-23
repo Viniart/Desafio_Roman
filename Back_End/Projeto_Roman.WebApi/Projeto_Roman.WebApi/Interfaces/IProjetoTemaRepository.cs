@@ -6,19 +6,21 @@ using System.Threading.Tasks;
 
 namespace Projeto_Roman.WebApi.Interfaces
 {
-    interface IProfessorRepository
+    interface IProjetoTemaRepository
     {
         /// <summary>
-        /// Listar todos os Professores
+        /// Listar todos os Projetos
         /// </summary>
         /// <returns></returns>
-        List<Professor> Listar();
+        List<ProjetoTema> Listar();
 
         /// <summary>
-        /// Buscar um Professor por id
+        /// Buscar um Projeto por id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Professor BuscarPorId(int id);
+        ProjetoTema BuscarPorIdProjeto(int id);
+
+        void Cadastrar(ProjetoTema novoProjeto);
     }
 }

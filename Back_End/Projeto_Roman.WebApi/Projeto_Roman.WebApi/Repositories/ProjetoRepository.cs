@@ -53,11 +53,13 @@ namespace Projeto_Roman.WebApi.Repositories
         /// Cadastra um novo Projeto
         /// </summary>
         /// <param name="novoProjeto"></param>
-        public void Cadastrar(Projeto novoProjeto)
+        public Projeto Cadastrar(Projeto novoProjeto)
         {
             ctx.Projetos.Add(novoProjeto);
 
             ctx.SaveChanges();
+
+            return novoProjeto;
         }
 
         /// <summary>
@@ -71,34 +73,6 @@ namespace Projeto_Roman.WebApi.Repositories
             ctx.SaveChanges();
         }
 
-        /// <summary>
-        /// Lista todos os Projetos
-        /// </summary>
-        /// <returns></returns>
-        public List<Projeto> Listar()
-        {
-            return ctx.Projetos
-                .Include(p => p.ProjetoTemas)
-                .Include(p => p.IdProfessorNavigation)
-                .Select(p => new Projeto ()
-                {
-                    IdProjeto = p.IdProjeto,
-                    IdProfessor = p.IdProfessor,
-                    Projeto1 = p.Projeto1,
-
-                    IdProfessorNavigation = new Professor()
-                    {
-                        Nome = p.IdProfessorNavigation.Nome,
-
-                        IdEquipeNavigation = new Equipe()
-                        {
-                            Equipe1 = p.IdProfessorNavigation.IdEquipeNavigation.Equipe1
-                        }
-                    }
-                    
-
-                })
-                .ToList();
-        }
+        
     }
 }

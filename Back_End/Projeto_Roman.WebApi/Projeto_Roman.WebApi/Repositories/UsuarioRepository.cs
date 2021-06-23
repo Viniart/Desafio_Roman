@@ -20,20 +20,6 @@ namespace Projeto_Roman.WebApi.Repositories
                 .FirstOrDefault(c => c.IdUsuario == id);
         }
 
-        public void Cadastrar(Usuario novoUsuario)
-        {
-            ctx.Usuarios.Add(novoUsuario);
-
-            ctx.SaveChanges();
-        }
-
-        public void Deletar(int id)
-        {
-            ctx.Usuarios.Remove(BuscarPorId(id));
-
-            ctx.SaveChanges();
-        }
-
         public List<Usuario> Listar()
         {
             return ctx.Usuarios

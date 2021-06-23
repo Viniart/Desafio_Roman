@@ -5,7 +5,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +27,50 @@ namespace Projeto_Roman.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services
+                .AddControllers()
+                .AddNewtonsoftJson(options =>
+                {
+                    // Ignora os loopings nas consultas
+                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                    // Ignora valores nulos ao fazer junções nas consultas
+                    options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+                });
+
+            services.AddCors(options => {
+                options.AddPolicy("CorsPolicy",
+                    builder => {
+                        builder
+                                                                    .AllowAnyOrigin()
+                                                                    .AllowAnyHeader()
+                                                                    .AllowAnyMethod();
+                    }
+                );
+            });
+
+
+
+            services
+                .AddAuthentication(options =>
+                {
+                    options.DefaultAuthenticateScheme = "JwtBearer";
+                    options.DefaultChallengeScheme = "JwtBearer";
+                })
+
+                .AddJwtBearer("JwtBearer", options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("c6301348-6898-4548-be7c-060d61d6307e")),
+                        ClockSkew = TimeSpan.FromMinutes(30),
+
+                        ValidIssuer = "SpMedGroup.webApi",
+                        ValidAudience = "SpMedGroup.webApi"
+                    };
+                });
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -43,9 +89,15 @@ namespace Projeto_Roman.WebApi
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Projeto_Roman.WebApi v1"));
             }
 
+            app.UseHttpsRedirection();
+
             app.UseRouting();
 
+            app.UseAuthentication();
+
             app.UseAuthorization();
+
+            app.UseCors("CorsPolicy");
 
             app.UseEndpoints(endpoints =>
             {

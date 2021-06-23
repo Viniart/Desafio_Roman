@@ -85,47 +85,5 @@ namespace Projeto_Roman.WebApi.Controllers
 
         }
 
-        /// <summary>
-        /// Deleta uma equipe pelo id
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        //[Authorize(Roles = "1")]
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
-        {
-            try
-            {
-                _equipeRepository.Deletar(id);
-                return StatusCode(200);
-            }
-            catch (Exception codErro)
-            {
-                return BadRequest(codErro);
-
-            }
-        }
-
-        /// <summary>
-        /// Atualiza uma equipe pelo id
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="equipeAtualizado"></param>
-        /// <returns></returns>
-        //[Authorize(Roles = "1")]
-        [HttpPut("{id}")]
-        public IActionResult Update(int id, Equipe equipeAtualizado)
-        {
-            try
-            {
-                _equipeRepository.Atualizar(id, equipeAtualizado);
-
-                return StatusCode(200);
-            }
-            catch (Exception codErro)
-            {
-                return BadRequest(codErro);
-            }
-        }
     }
 }

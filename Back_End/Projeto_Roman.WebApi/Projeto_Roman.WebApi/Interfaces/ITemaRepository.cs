@@ -33,11 +33,5 @@ namespace Projeto_Roman.WebApi.Interfaces
         /// <param name="id"></param>
         /// <param name="temaAtualizado"></param>
         void Atualizar(int id, Tema temaAtualizado);
-
-        /// <summary>
-        /// Deleta um Tema pelo id
-        /// </summary>
-        /// <param name="id"></param>
-        void Deletar(int id);
     }
 }

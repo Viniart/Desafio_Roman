@@ -86,27 +86,6 @@ namespace Projeto_Roman.WebApi.Controllers
         }
 
         /// <summary>
-        /// Deleta um Tema pelo id
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        //[Authorize(Roles = "1")]
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
-        {
-            try
-            {
-                _temaRepository.Deletar(id);
-                return StatusCode(200);
-            }
-            catch (Exception codErro)
-            {
-                return BadRequest(codErro);
-
-            }
-        }
-
-        /// <summary>
         /// Atualiza um Tema pelo id
         /// </summary>
         /// <param name="id"></param>

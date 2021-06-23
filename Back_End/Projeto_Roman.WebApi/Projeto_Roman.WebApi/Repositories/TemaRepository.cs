@@ -55,17 +55,6 @@ namespace Projeto_Roman.WebApi.Repositories
         }
 
         /// <summary>
-        /// Deleta um Tema pelo id
-        /// </summary>
-        /// <param name="id"></param>
-        public void Deletar(int id)
-        {
-            ctx.Temas.Remove(BuscarPorId(id));
-
-            ctx.SaveChanges();
-        }
-
-        /// <summary>
         /// Lista todos os Temas
         /// </summary>
         /// <returns></returns>

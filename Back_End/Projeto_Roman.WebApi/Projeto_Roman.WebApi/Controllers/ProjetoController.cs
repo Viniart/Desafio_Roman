@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Projeto_Roman.WebApi.Domains;
+using Projeto_Roman.WebApi.DTO;
 using Projeto_Roman.WebApi.Interfaces;
 using Projeto_Roman.WebApi.Repositories;
 using System;
@@ -16,10 +17,12 @@ namespace Projeto_Roman.WebApi.Controllers
     public class ProjetoController : ControllerBase
     {
         private IProjetoRepository _projetoRepository { get; set; }
+        private IProjetoTemaRepository _projetoTemaRepository { get; set; }
 
         public ProjetoController()
         {
             _projetoRepository = new ProjetoRepository();
+            _projetoTemaRepository = new ProjetoTemaRepository();
         }
 
         /// <summary>
@@ -32,13 +35,50 @@ namespace Projeto_Roman.WebApi.Controllers
         {
             try
             {
-                return Ok(_projetoRepository.Listar().OrderBy(c => c.IdProjeto));
+                return Ok(_projetoTemaRepository.Listar().OrderBy(c => c.IdProjeto));
             }
             catch (Exception ex)
             {
 
                 return BadRequest(ex);
             }
+        }
+
+        /// <summary>
+        /// Cadastra um novo Projeto
+        /// </summary>
+        /// <param name="novoProjeto"></param>
+        /// <returns></returns>
+        //[Authorize(Roles = "1")]
+        [HttpPost]
+        public IActionResult Post(ProjetoTemaDTO novoProjetoTemaDTO)
+        {
+            try
+            {
+                var novoProjeto = new Projeto
+                {
+                    IdProfessor = novoProjetoTemaDTO.IdProfessor,
+                    Projeto1 = novoProjetoTemaDTO.Projeto1
+                };
+
+                novoProjeto = _projetoRepository.Cadastrar(novoProjeto);
+
+                var novoProjetoTema = new ProjetoTema
+                {
+                    IdProjeto = novoProjeto.IdProjeto,
+                    IdTema = novoProjetoTemaDTO.IdTema
+                };
+
+                _projetoTemaRepository.Cadastrar(novoProjetoTema);
+
+                return Created("", novoProjeto);
+            }
+            catch (Exception codErro)
+            {
+                return BadRequest(codErro);
+
+            }
+
         }
 
         /// <summary>
@@ -58,50 +98,6 @@ namespace Projeto_Roman.WebApi.Controllers
             {
 
                 return BadRequest(ex);
-            }
-        }
-
-        /// <summary>
-        /// Cadastra um novo Projeto
-        /// </summary>
-        /// <param name="novoProjeto"></param>
-        /// <returns></returns>
-        //[Authorize(Roles = "1")]
-        [HttpPost]
-        public IActionResult Post(Projeto novoProjeto)
-        {
-            try
-            {
-                _projetoRepository.Cadastrar(novoProjeto);
-
-                return StatusCode(201);
-            }
-            catch (Exception codErro)
-            {
-                return BadRequest(codErro);
-
-            }
-
-        }
-
-        /// <summary>
-        /// Deleta um Projeto pelo id
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        //[Authorize(Roles = "1")]
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
-        {
-            try
-            {
-                _projetoRepository.Deletar(id);
-                return StatusCode(200);
-            }
-            catch (Exception codErro)
-            {
-                return BadRequest(codErro);
-
             }
         }
 

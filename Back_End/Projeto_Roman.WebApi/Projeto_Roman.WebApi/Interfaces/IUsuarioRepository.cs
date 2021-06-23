@@ -22,18 +22,6 @@ namespace Projeto_Roman.WebApi.Interfaces
         Usuario BuscarPorId(int id);
 
         /// <summary>
-        /// Cadastra um novo usuario
-        /// </summary>
-        /// <param name="novoUsuario"></param>
-        void Cadastrar(Usuario novoUsuario);
-
-        /// <summary>
-        /// Deleta um usuario pelo id
-        /// </summary>
-        /// <param name="id"></param>
-        void Deletar(int id);
-
-        /// <summary>
         /// Metodo utilizado para efetuar o login do usuario
         /// </summary>
         /// <param name="email"></param>

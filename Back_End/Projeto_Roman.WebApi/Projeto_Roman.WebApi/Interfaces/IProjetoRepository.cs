@@ -9,12 +9,6 @@ namespace Projeto_Roman.WebApi.Interfaces
     interface IProjetoRepository
     {
         /// <summary>
-        /// Listar todos os Projetos
-        /// </summary>
-        /// <returns></returns>
-        List<Projeto> Listar();
-
-        /// <summary>
         /// Buscar um Projeto por id
         /// </summary>
         /// <param name="id"></param>
@@ -25,7 +19,7 @@ namespace Projeto_Roman.WebApi.Interfaces
         /// Cadastrar um novo Projeto
         /// </summary>
         /// <param name="novoProjeto"></param>
-        void Cadastrar(Projeto novoProjeto);
+        Projeto Cadastrar(Projeto novoProjeto);
 
         /// <summary>
         /// Atualiza um Projeto pelo id
