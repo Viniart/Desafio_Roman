@@ -12,25 +12,6 @@ namespace Projeto_Roman.WebApi.Repositories
     {
         RomanContext ctx = new RomanContext();
 
-        public TipoUsuario BuscarPorId(int id)
-        {
-            return ctx.TipoUsuarios.FirstOrDefault(c => c.IdTipo == id);
-        }
-
-        public void Cadastrar(TipoUsuario novoTipoUsuario)
-        {
-            ctx.TipoUsuarios.Add(novoTipoUsuario);
-
-            ctx.SaveChanges();
-        }
-
-        public void Deletar(int id)
-        {
-            ctx.TipoUsuarios.Remove(BuscarPorId(id));
-
-            ctx.SaveChanges();
-        }
-
         public List<TipoUsuario> Listar()
         {
             return ctx.TipoUsuarios.ToList();

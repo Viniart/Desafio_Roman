@@ -14,23 +14,6 @@ namespace Projeto_Roman.WebApi.Interfaces
         /// <returns></returns>
         List<TipoUsuario> Listar();
 
-        /// <summary>
-        /// Buscar um tipo de usuario por id
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        TipoUsuario BuscarPorId(int id);
-
-        /// <summary>
-        /// Cadastrar um novo tipo de usuario
-        /// </summary>
-        /// <param name="novoTipoUsuario"></param>
-        void Cadastrar(TipoUsuario novoTipoUsuario);
-
-        /// <summary>
-        /// Deletar um tipo de usuario por id
-        /// </summary>
-        /// <param name="id"></param>
-        void Deletar(int id);
+        
     }
 }
