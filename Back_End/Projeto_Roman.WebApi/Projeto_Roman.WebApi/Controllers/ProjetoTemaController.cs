@@ -26,7 +26,7 @@ namespace Projeto_Roman.WebApi.Controllers
         /// </summary>
         /// <param name="novoTema"></param>
         /// <returns></returns>
-        //[Authorize]
+        //[Authorize(Roles = "2"]
         [HttpPost]
         public IActionResult Post(ProjetoTema novoProjetoTema)
         {

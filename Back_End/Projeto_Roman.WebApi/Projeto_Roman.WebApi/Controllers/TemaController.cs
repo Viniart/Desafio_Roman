@@ -27,7 +27,7 @@ namespace Projeto_Roman.WebApi.Controllers
         /// Lista todos os Temas
         /// </summary>
         /// <returns></returns>
-        //[Authorize(Roles = "1")]
+        //[Authorize]
         [HttpGet]
         public IActionResult Get()
         {
@@ -47,7 +47,7 @@ namespace Projeto_Roman.WebApi.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        //[Authorize(Roles = "1")]
+        //[Authorize]
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -67,7 +67,7 @@ namespace Projeto_Roman.WebApi.Controllers
         /// </summary>
         /// <param name="novoTema"></param>
         /// <returns></returns>
-        //[Authorize(Roles = "1")]
+        //[Authorize(Roles = "2")]
         [HttpPost]
         public IActionResult Post(Tema novoTema)
         {
@@ -91,7 +91,7 @@ namespace Projeto_Roman.WebApi.Controllers
         /// <param name="id"></param>
         /// <param name="temaAtualizado"></param>
         /// <returns></returns>
-        //[Authorize(Roles = "1")]
+        //[Authorize(Roles = "2")]
         [HttpPut("{id}")]
         public IActionResult Update(int id, Tema temaAtualizado)
         {

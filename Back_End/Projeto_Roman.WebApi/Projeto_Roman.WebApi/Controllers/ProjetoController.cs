@@ -29,7 +29,7 @@ namespace Projeto_Roman.WebApi.Controllers
         /// Lista todos os Projetos
         /// </summary>
         /// <returns></returns>
-        //[Authorize(Roles = "1")]
+        //[Authorize]
         [HttpGet]
         public IActionResult Get()
         {
@@ -49,7 +49,7 @@ namespace Projeto_Roman.WebApi.Controllers
         /// </summary>
         /// <param name="novoProjeto"></param>
         /// <returns></returns>
-        //[Authorize(Roles = "1")]
+        //[Authorize(Roles = "2")]
         [HttpPost]
         public IActionResult Post(ProjetoTemaDTO novoProjetoTemaDTO)
         {
@@ -86,7 +86,7 @@ namespace Projeto_Roman.WebApi.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        //[Authorize(Roles = "1")]
+        //[Authorize]
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -107,7 +107,7 @@ namespace Projeto_Roman.WebApi.Controllers
         /// <param name="id"></param>
         /// <param name="projetoAtualizado"></param>
         /// <returns></returns>
-        //[Authorize(Roles = "1")]
+        //[Authorize(Roles = "2")]
         [HttpPut("{id}")]
         public IActionResult Update(int id, Projeto projetoAtualizado)
         {
