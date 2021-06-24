@@ -7534,19 +7534,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pedro\\.nuget\\packages\\": {}
+    "C:\\Users\\Desktop\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pedro\\Desktop\\Repositório\\sprint4_front-end\\Desafio\\Desafio_Roman\\Back_End\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\Desktop\\Desktop\\Codação\\Mobile\\Base\\Back_End\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi.csproj",
       "projectName": "Projeto_Roman.WebApi",
-      "projectPath": "C:\\Users\\pedro\\Desktop\\Repositório\\sprint4_front-end\\Desafio\\Desafio_Roman\\Back_End\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi.csproj",
-      "packagesPath": "C:\\Users\\pedro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pedro\\Desktop\\Repositório\\sprint4_front-end\\Desafio\\Desafio_Roman\\Back_End\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi\\obj\\",
+      "projectPath": "C:\\Users\\Desktop\\Desktop\\Codação\\Mobile\\Base\\Back_End\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi.csproj",
+      "packagesPath": "C:\\Users\\Desktop\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Desktop\\Desktop\\Codação\\Mobile\\Base\\Back_End\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Desktop\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7621,7 +7621,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.204\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
