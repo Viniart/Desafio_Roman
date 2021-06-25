@@ -1,32 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Desktop\\Desktop\\Codação\\Mobile\\Base\\Back_End\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi.csproj": {}
+    "C:\\Users\\FIC\\Desktop\\Maiara\\Desafio_Roman\\Back_End\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Desktop\\Desktop\\Codação\\Mobile\\Base\\Back_End\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi.csproj": {
+    "C:\\Users\\FIC\\Desktop\\Maiara\\Desafio_Roman\\Back_End\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Desktop\\Desktop\\Codação\\Mobile\\Base\\Back_End\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\FIC\\Desktop\\Maiara\\Desafio_Roman\\Back_End\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi.csproj",
         "projectName": "Projeto_Roman.WebApi",
-        "projectPath": "C:\\Users\\Desktop\\Desktop\\Codação\\Mobile\\Base\\Back_End\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi.csproj",
-        "packagesPath": "C:\\Users\\Desktop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Desktop\\Desktop\\Codação\\Mobile\\Base\\Back_End\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi\\obj\\",
+        "projectPath": "C:\\Users\\FIC\\Desktop\\Maiara\\Desafio_Roman\\Back_End\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi.csproj",
+        "packagesPath": "C:\\Users\\FIC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\FIC\\Desktop\\Maiara\\Desafio_Roman\\Back_End\\Projeto_Roman.WebApi\\Projeto_Roman.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Desktop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\FIC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net50"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net50": {
             "projectReferences": {}
           }
         },
@@ -37,8 +36,7 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net50": {
           "dependencies": {
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -71,25 +69,12 @@
               "version": "[6.11.1, )"
             }
           },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win7-x86": {
+          "#import": []
         }
       }
     }

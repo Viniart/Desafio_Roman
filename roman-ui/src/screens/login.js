@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { TouchableOpacity,ImageBackgroundBase,StyleSheet,Text,TextInput,Pressable,View } from 'react-native';
+import { TouchableOpacity,  Image, ImageBackgroundBase,StyleSheet,Text,TextInput,Pressable,View } from 'react-native';
 import  AsyncStorage  from '@react-native-async-storage/async-storage';
 
 import api from '../services/api';
+import vandiesel from '../../assets/logo.png';
 
 export default class Login extends Component {
     constructor(props){
@@ -36,24 +37,51 @@ export default class Login extends Component {
         } catch(erro) {
             console.warn(erro)
         }
+
+        
     };
 
     render(){
         return(
             <View style={styles.overlay}>
+
+            {/* <View style={styles.aaaaa}>
+                <Image
+                    style={styles.tinyLogo}
+                    source={require('../../assets/logo.png')}
+                />
+            </View> */}
+
+
                 <View style={styles.main}>
+
+                <View style={styles.aaaaa}>
+                <Image
+                    style={styles.tinyLogo}
+                    source={require('../../assets/logo.png')}
+                />
+
+            </View>
+                    
                     <TextInput 
                         style={styles.inputLogin}
-                        placeholder="Username"
+                        placeholder=" Username"
                         keyboardType="email-address"
                         onChangeText={email => this.setState({ email })}
                     />
+
                     <TextInput 
                         style={styles.inputLogin}
-                        placeholder="Password"
+                        placeholder=" Password"
                         secureTextEntry={true}
                         onChangeText={senha => this.setState({ senha })}
                     />
+
+                             {/* <Pressable
+                                 style={styles.btnSenha}
+                             >
+                                 <Text style={styles.btnSenha}>hjnsil</Text>
+                             </Pressable> */}
 
                     <Pressable
                         style={styles.btnLogin}
@@ -61,6 +89,12 @@ export default class Login extends Component {
                     >
                         <Text style={styles.btnLoginText}>Login</Text>
                     </Pressable>
+
+                    <Pressable
+                        style={styles.btnLink}
+                    >
+                        <Text style={styles.btnLink}>Clique aqui para se cadastrar!</Text>
+                    </Pressable>  
                 </View>
             </View>
         )
@@ -70,42 +104,79 @@ export default class Login extends Component {
 const styles = StyleSheet.create({
     overlay: {
         ...StyleSheet.absoluteFillObject,
-        backgroundColor: '#F52D22'
+        backgroundColor: '#12294B'
     },
+    aaaaa: {
+        width: '80%',
+        height: '30%',
+        marginRight: '5em',
+        alignItems: 'center',
+        //justifyContent: 'center',
+       // backgroundColor: 'red',
+        marginTop: '1em',
 
+    },
     main: {
         width: '100%',
         height: '100%',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        //backgroundColor:'yellow'
+
+    },
+
+    tinyLogo: {
+        width: '30%',
+        height: '30%',
+      },
+
+    mainImgLogin:{
+        width: 90,
+        margin: 60,
+        marginTop:0,
+        
     },
 
     inputLogin: {
-        width: 200,
+        width: 315,
         marginBottom: 40,
         fontSize: 20,
         color: '#FFF',
-        borderColor: '#FFF',
+        borderColor: '#B7B8A3',
         borderWidth: 2,
-        borderRadius: '15px'
+        borderRadius: '10px'
     },
 
     btnLogin: {
         alignItems: 'center',
         justifyContent: 'center',
         height: 35,
-        width: 240,
+        width: 210,
         backgroundColor: '#FFF',
-        borderColor: '#FFF',
+        borderColor: '#B7B8A3',
         borderWidth: 1,
         borderRadius: 4,
-        marginTop: 20
+        marginTop: 20,
+        
     },
 
     btnLoginText: {
-        fontSize: 12,
+        fontSize: 15,
         fontFamily: 'Arial',
-        color: '#F52D22',
-        textTransform: 'uppercase'
-    }
+        color: '#580C30',
+        textTransform: 'uppercase',
+        
+    },
+
+    btnLink:{
+        color: '#ffff',
+        marginTop: '0.3em',
+        textDecorationLine: 'underline', 
+        fontSize: '15px'
+
+    },
+
+   
+
+    
 });
